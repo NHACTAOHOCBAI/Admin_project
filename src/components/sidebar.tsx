@@ -3,7 +3,12 @@ import '../assets/css/sidebar.css'
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { FaBoxOpen } from 'react-icons/fa';
 import { NavLink } from 'react-router';
+import { useLayout } from '../context/layoutContext';
 const SideBar = () => {
+    const { setIsSideBarActive } = useLayout();
+    const handleClickLink = () => {
+        setIsSideBarActive((pre) => !pre)
+    }
     const iconSize = 20;
     const linkData = [
         {
@@ -42,7 +47,9 @@ const SideBar = () => {
                                 <div className='sub-items'>
                                     {item.subItems.map((subItem) => {
                                         return (
-                                            <NavLink to={subItem.url}
+                                            <NavLink
+                                                onClick={handleClickLink}
+                                                to={subItem.url}
                                                 style={({ isActive }) => {
                                                     return {
                                                         backgroundColor: isActive ? "#3498db" : "",
