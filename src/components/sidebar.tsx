@@ -45,7 +45,8 @@ const SideBar = () => {
                                             <NavLink to={subItem.url}
                                                 style={({ isActive }) => {
                                                     return {
-                                                        backgroundColor: isActive ? "#3498db" : ""
+                                                        backgroundColor: isActive ? "#3498db" : "",
+                                                        color: isActive ? "white" : ""
                                                     }
                                                 }
                                                 }

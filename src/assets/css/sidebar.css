@@ -48,7 +48,8 @@
 
 .nav .sub-items .item:hover {
     background-color:#74b9ff;
-    opacity:0.9
+    opacity:0.9;
+    color:white;
 }
 
 .nav .sub-items .item{
